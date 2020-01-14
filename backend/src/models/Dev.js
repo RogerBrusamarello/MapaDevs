@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const PointSchema = require('./utils/PointSchema');
 
+//Model Dev, Atributos do desenvolvedor
 const DevSchema = new mongoose.Schema({
     name: String,
     github_username: String,
