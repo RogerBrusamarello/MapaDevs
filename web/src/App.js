@@ -38,6 +38,7 @@ function App() {
     <div id="app">
       <aside>
         <strong>Cadastrar</strong>
+        {/* Mandando a função handleAddDEV via props */}
         <DevForm onSubmit={handleAddDev} />
       </aside>
 

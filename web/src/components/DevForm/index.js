@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 //Recebe via PROPS o objeto onSubmit, que possibilita executar todo o form de cadastro do App.js (PAI)
-function DevForm({ onSubmit }) {
+function DevForm({ onSubmit }) {// onSubmit é igual a handleAddDev
   const [github_username, setGithubUsername] = useState('');
   const [techs, setTechs] = useState('');
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
 
-  //Pega coordenadas do navegador
+  //Pega coordenadas(Geolocalização) do navegador
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -29,6 +29,7 @@ function DevForm({ onSubmit }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    // Aqui ele faz handleAddDev(github_username, techs, latitude, longitude), que por sua vez no pai ele recebe como DATA e manda tudo isso para o backend
     await onSubmit({
       github_username,
       techs,
