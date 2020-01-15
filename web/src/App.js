@@ -1,24 +1,22 @@
+//Componente: Bloco isolado de HTML, CSS, JS, o qual não interefe no restante da aplicação
+//Propriedade: Informações que um componente PAI passa para o componente filho
+//Estado: Informações mantidas pelo componente (Lembrar: Imutabilidade)
 import React from 'react';
-import logo from './logo.svg';
+import './global.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <aside>
+        <strong>Cadastrar</strong>
+        <form>
+          <label htmlFor=""></label>
+        </form>
+      </aside>
+      <main>
+
+      </main>
     </div>
   );
 }
