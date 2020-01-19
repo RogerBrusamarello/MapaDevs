@@ -8,6 +8,7 @@ const { setupWebSocket } = require('./websocket');
 const app = express();
 const server = http.Server(app);
 
+//Para deixar o servidor com conexão em tempo real
 setupWebSocket(server);
   
 //Conecta no Banco
