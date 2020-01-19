@@ -1,10 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const http = require('http');
 const routes = require('./routes');
+const { setupWebSocket } = require('./websocket'); 
 
 const app = express();
+const server = http.Server(app);
 
+setupWebSocket(server);
+  
 //Conecta no Banco
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-7a6hi.mongodb.net/week10?retryWrites=true&w=majority', {
     useNewUrlParser: true,
@@ -19,4 +24,4 @@ app.use(express.json());
 app.use(routes);
 
 //Configura a porta padrão do servidor
-app.listen(3333);
+server.listen(3333);
